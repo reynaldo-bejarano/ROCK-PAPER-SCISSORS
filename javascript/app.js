@@ -25,18 +25,18 @@ let randomNumero = 0;
 
 const array = [
   {
-    figura: "paper",
-    icon: "icon-paper",
+    figure: "paper",
+    icon: "images/icon-paper.svg",
     border: "border-primary",
   },
   {
-    figura: "scissors",
-    icon: "icon-scissors",
+    figure: "scissors",
+    icon: "images/icon-scissors.svg",
     border: "border-warning",
   },
   {
-    figura: "rock",
-    icon: "icon-rock",
+    figure: "rock",
+    icon: "images/icon-rock.svg",
     border: "border-danger",
   },
 ];
@@ -74,10 +74,10 @@ const Game = (props) => {
 
 btnReset.addEventListener("click", () => {
   btnPlayer.classList.remove(array[propsNumber].border);
-  playerIcon.classList.remove(array[propsNumber].icon);
+  // playerIcon.classList.remove(array[propsNumber].icon);
 
   btnHouse.classList.remove(array[randomNumero].border);
-  houseIcon.classList.remove(array[randomNumero].icon);
+  // houseIcon.classList.remove(array[randomNumero].icon);
 
   main.classList.remove("d-none");
   picked.classList.add("d-none");
@@ -119,6 +119,7 @@ const Rock = () => {
   if (randomNumero == 0) {
     numberScore--;
     score.innerHTML = `${numberScore}`;
+    winner.innerHTML = "YOU LOSE";
   } else if (randomNumero === 2) {
     winner.innerHTML = "DRAW";
   } else {
@@ -133,13 +134,13 @@ const styleGame = (props) => {
   picked.classList.remove("d-none");
 
   btnPlayer.classList.add(array[props].border);
-  playerIcon.classList.add(array[props].icon);
+  playerIcon.src = array[props].icon;
 
   propsNumber = props;
   randomNumero = randomNumber();
 
   btnHouse.classList.add(array[randomNumero].border);
-  houseIcon.classList.add(array[randomNumero].icon);
+  houseIcon.src = array[randomNumero].icon;
 };
 
 const closeCardRules = (e) => {

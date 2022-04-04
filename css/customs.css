@@ -37,18 +37,6 @@
   width: 60%;
 }
 
-.icon-paper {
-  content: url(/images/icon-paper.svg);
-}
-
-.icon-scissors {
-  content: url(/images/icon-scissors.svg);
-}
-
-.icon-rock {
-  content: url(/images/icon-rock.svg);
-}
-
 @media (min-width: 576px) {
   .h-main {
     height: 320px;
